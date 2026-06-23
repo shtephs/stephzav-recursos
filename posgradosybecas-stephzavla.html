@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posgrado y Becas — Guía para Veterinarias LATAM</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  /* ─── SYSTEM COLORS (Rhode & Notion Minimal-Pop Concept) ─── */
+  :root {
+    --bg-cream:    #fefcf7;
+    --main-blue:   #14273f;
+    --brand-blue:  #c7def8;
+    --brand-lav:   #dbdff0;
+    --pop-pink:    #e7b0c8;
+    --pop-olive:   #979c7c;
+    --pop-plum:    #381729;
+    --bg-white:    #ffffff;
+    --border-light: rgba(20, 39, 63, 0.08);
+    --r-sm:        10px;
+    --r-md:        12px;
+    --r-lg:        20px;
+    --r-pill:      99px;
+  }
+
+  /* ─── RESET & BASE ─── */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg-cream);
+    color: var(--main-blue);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page-body {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 50px 30px 80px;
+  }
+
+  @media print {
+    body { background: #ffffff; }
+    .page-body { padding: 20px; }
+    .card, .beca, .req-card { page-break-inside: avoid; }
+  }
+
+  /* ─── HEADER (Rhode Matte Editorial Style - Clean Update) ─── */
+  header {
+    margin-bottom: 40px;
+    border-bottom: 1.5px solid var(--main-blue);
+    padding-bottom: 32px;
+  }
+  .site-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--main-blue);
+    opacity: 0.6;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--main-blue);
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--pop-plum);
+    display: block;
+    font-size: 0.75em;
+    margin-top: 4px;
+  }
+  .header-sub {
+    font-size: 15px;
+    color: var(--main-blue);
+    opacity: 0.8;
+    margin-top: 12px;
+    max-width: 650px;
+  }
+
+  /* ─── NOTION STYLE VISUAL CALLOUTS ─── */
+  .notice {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--main-blue);
+    border-radius: var(--r-md);
+    padding: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 14px;
+    align-items: start;
+  }
+  .notice-icon {
+    background: var(--brand-blue);
+    color: var(--main-blue);
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  
+  .block-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+    display: block;
+    color: var(--main-blue);
+  }
+
+  /* ─── SEARCH FILTERS COMPONENT ─── */
+  .filter-widget {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--r-md);
+    padding: 20px;
+    margin-bottom: 32px;
+  }
+  .filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 12px;
+  }
+  @media(max-width: 550px) { .filter-grid { grid-template-columns: 1fr; } }
+  .filter-select {
+    background: var(--bg-cream);
+    border: 1px solid var(--border-light);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--main-blue);
+    font-weight: 500;
+  }
+
+  /* ─── MENTOR QUOTE BLOCK (PERSONAL ADVICE) ─── */
+  .mentor-quote {
+    background: var(--brand-lav);
+    border-radius: var(--r-lg);
+    padding: 24px;
+    margin: 32px 0;
+    position: relative;
+    border-left: 5px solid var(--pop-plum);
+  }
+  .mentor-meta {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--pop-plum);
+    margin-bottom: 6px;
+  }
+  .mentor-text {
+    font-size: 13px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--main-blue);
+  }
+
+  /* ─── TITLES & GRAPHIC DIVIDERS ─── */
+  .section-header { 
+    margin: 48px 0 20px; 
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-badge {
+    background: var(--main-blue);
+    color: var(--bg-cream);
+    font-size: 11px;
+    font-weight: 700;
+    font-family: monospace;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .section-title { font-size: 24px; font-weight: 700; letter-spacing: -0.01em; color: var(--main-blue); }
+  
+  .continent-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--main-blue);
+    margin-top: 36px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--main-blue);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .country-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--main-blue);
+    margin: 24px 0 12px;
+    display: inline-block;
+    background: var(--brand-lav);
+    padding: 4px 12px;
+    border-radius: var(--r-pill);
+  }
+
+  .state-title-badge {
+    font-size: 13px; 
+    font-weight: 700; 
+    color: var(--main-blue); 
+    margin: 16px 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .state-title-badge::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: var(--pop-pink);
+    border-radius: 50%;
+  }
+
+  /* ─── DIDACTIC CARDS BY VIBE ─── */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  @media(max-width: 680px) { .cards { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--r-md);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .card-top { margin-bottom: 12px; }
+  .card-area {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--pop-plum);
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+  }
+  .card-uni { font-size: 15px; font-weight: 700; line-height: 1.35; margin-bottom: 6px; color: var(--main-blue); padding-right: 70px; }
+  .card-program { font-size: 13px; opacity: 0.85; margin-bottom: 10px; line-height: 1.6; }
+  
+  .card-vibe-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: var(--r-pill);
+    letter-spacing: 0.05em;
+  }
+  .vibe-micro { background: var(--brand-blue); color: var(--main-blue); }
+  .vibe-eco { background: var(--pop-olive); color: var(--bg-cream); }
+  .vibe-data { background: var(--pop-pink); color: var(--pop-plum); }
+  .vibe-lab { background: var(--brand-lav); color: var(--main-blue); }
+  .vibe-agro { background: #f0e6df; color: var(--pop-plum); }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: var(--r-pill);
+    background: var(--bg-cream);
+    border: 1px solid var(--border-light);
+    color: var(--main-blue);
+  }
+  
+  .card-data-list {
+    font-size: 12px;
+    background: #fcfbfa;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px dashed var(--brand-blue);
+  }
+  .card-data-list p { margin-bottom: 4px; }
+  .card-data-list p:last-child { margin-bottom: 0; }
+
+  .card-note {
+    font-size: 12px;
+    color: var(--main-blue);
+    opacity: 0.75;
+    font-style: italic;
+    line-height: 1.6;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border-light);
+    margin-bottom: 12px;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    opacity: 0.75;
+    margin-top: 8px;
+    border-top: 1px dashed var(--border-light);
+    padding-top: 6px;
+  }
+
+  /* ─── ACCESSIBLE BUTTONS & LINKS ─── */
+  .card-link, .beca-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--main-blue);
+    text-decoration: none;
+    background: var(--brand-blue);
+    padding: 6px 12px;
+    border-radius: var(--r-pill);
+    width: fit-content;
+    gap: 4px;
+    transition: all 0.2s ease;
+  }
+  .card-link:hover, .beca-link:hover { 
+    background: var(--main-blue); 
+    color: var(--bg-cream);
+  }
+
+  /* ─── BECAS BLOCKS ─── */
+  .becas { display: flex; flex-direction: column; gap: 16px; }
+  .beca {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--r-md);
+    padding: 20px;
+  }
+  .beca-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .beca-name { font-size: 16px; font-weight: 700; color: var(--main-blue); }
+  .beca-org { font-size: 12px; opacity: 0.6; }
+  .beca-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .beca-detail {
+    font-size: 11px;
+    background: var(--brand-lav);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--main-blue);
+  }
+  .beca-note { font-size: 13px; opacity: 0.9; margin-bottom: 8px; line-height: 1.6; }
+  .beca-highlight { font-size: 12px; font-weight: 700; color: var(--pop-plum); display: flex; align-items: center; gap: 4px; margin-bottom: 8px; }
+
+  /* ─── REQUISITOS GRID ─── */
+  .req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media(max-width: 680px) { .req-grid { grid-template-columns: 1fr; } }
+  .req-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--r-md);
+    padding: 20px;
+  }
+  .req-title { font-size: 14px; font-weight: 700; margin-bottom: 10px; border-bottom: 1.5px solid var(--main-blue); padding-bottom: 4px; color: var(--main-blue); }
+  .req-title { font-size: 14px; font-weight: 700; margin-bottom: 10px; border-bottom: 1.5px solid var(--main-blue); padding-bottom: 4px; color: var(--main-blue); }
+  .req-list { list-style: none; }
+  .req-list li {
+    font-size: 12px;
+    padding: 6px 0;
+    border-bottom: 1px dashed var(--border-light);
+    display: flex;
+    gap: 8px;
+    align-items: start;
+  }
+  .req-list li::before { content: "✦"; color: var(--pop-plum); font-size: 10px; }
+
+  /* ─── ROADMAP STYLES ─── */
+  .roadmap { display: flex; flex-direction: column; gap: 16px; }
+  .roadmap-step {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--r-md);
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: start;
+  }
+  .step-num {
+    background: var(--main-blue);
+    color: var(--bg-cream);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 12px;
+  }
+  .step-title { font-size: 15px; font-weight: 700; color: var(--main-blue); margin-bottom: 4px; }
+  .step-desc { font-size: 13px; opacity: 0.85; line-height: 1.6; }
+
+  /* ─── TABLE ─── */
+  .table-wrap { overflow-x: auto; background: var(--bg-white); border: 1px solid var(--border-light); border-radius: var(--r-md); margin-top: 16px; }
+  table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; }
+  th { background: var(--main-blue); color: var(--bg-cream); padding: 12px 14px; font-weight: 700; text-transform: uppercase; font-size: 10px; letter-spacing: 0.05em; }
+  td { padding: 12px 16px; border-bottom: 1px solid var(--border-light); color: var(--main-blue); vertical-align: top; line-height: 1.6; }
+  tr:last-child td { border-bottom: none; }
+  .step-tip {
+    font-size: 11px;
+    font-style: italic;
+    color: var(--main-blue);
+    background: var(--brand-lav);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    display: inline-block;
+  }
+
+  /* ─── SUMMARY INFO BOX ─── */
+  .summary-box {
+    background: var(--main-blue);
+    color: var(--bg-cream);
+    border-radius: var(--r-lg);
+    padding: 24px;
+    margin-top: 40px;
+  }
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 12px; }
+  @media(max-width: 500px) { .summary-grid { grid-template-columns: 1fr; } }
+  .summary-links a { color: var(--brand-blue); text-decoration: none; display: block; line-height: 1.6; font-weight: 500; }
+  .summary-links a:hover { color: var(--pop-pink); }
+
+  hr { border: none; border-top: 1px solid var(--main-blue); margin: 40px 0; }
+  footer { font-size: 11px; text-align: center; opacity: 0.6; font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="page-body">
+
+  <header>
+    <div class="site-label">Guía de posgrado y becas · Jun 2026</div>
+    <h1>Posgrado <em>y becas para veterinarias LATAM</em></h1>
+    <div class="header-sub">Guía para veterinarias LATAM que quieren salir de la clínica hacia investigación, explicada de colega a colega.</div>
+  </header>
+
+  <div class="notice">
+    <div class="notice-icon">✦</div>
+    <div>
+      <span class="block-label">El gran mito de la homologación</span>
+      <p>Si te vas a dedicar a la <strong>investigación, academia, industria o agencias internacionales (como OPS, FAO u OIE)</strong>, tu título de MVZ sirve perfectamente en el extranjero <strong>sin homologar</strong>. Esto pasa porque no estás recetando ni operando pacientes en consulta clínica. Solo se evalúa tu perfil científico.</p>
+      <p style="margin-top: 6px; font-size: 13px; opacity: 0.9;">¿Cuándo sí es obligatoria? Únicamente si quieres abrir tu propia clínica asistencial o firmar papeles oficiales de salud pública en otro país.</p>
+    </div>
+  </div>
+
+  <div class="notice" style="border-left: 4px solid var(--pop-pink); background: var(--bg-white);">
+    <div class="notice-icon" style="background: var(--brand-lav); color: var(--pop-plum);">⬙</div>
+    <div>
+      <span class="block-label" style="color: var(--pop-plum);">La Realidad del Filtro (Insider Data)</span>
+      <p style="margin-bottom: 8px;">El promedio mínimo de <strong>8.0 es un filtro automatizado por software</strong>, no por humanos. Si tienes 7.9, el sistema nacional te rebota antes de que un científico lea tu currículum.</p>
+      <span class="step-tip" style="background: var(--pop-pink); color: var(--pop-plum); font-style: normal; font-weight: 700; margin-top: 0;">Hack de Salvación:</span>
+      <span style="font-size: 11px; opacity: 0.85;"> Si tu promedio es menor, necesitas vincularte a un proyecto con financiamiento propio del investigador (PAPIIT o proyectos de industria externa) antes de aplicar, para que el comité gestione una excepción manual.</span>
+    </div>
+  </div>
+
+  <div class="filter-widget">
+    <span class="block-label" style="opacity: 0.7;">Buscador y Auditoría de Programas Externos</span>
+    <p style="font-size: 12px; opacity: 0.85;">Si rastreas opciones fuera de esta lista, segmenta estrictamente bajo esta jerarquía. Los requisitos del programa cambian conforme al programa de estudio y también el perfil de ingreso.</p>
+    <div class="filter-grid">
+      <div class="filter-select">▪ País de Destino</div>
+      <div class="filter-select">▪ Nivel (Maestría / Doctorado)</div>
+      <div class="filter-select">▪ Campo de estudio (Genética / Inocuidad / Fauna)</div>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-badge">01</span>
+    <div class="section-title">Programas de Posgrado</div>
+  </div>
+
+  <div class="continent-title">Latinoamérica</div>
+
+  <div class="country-title">México</div>
+  
+  <div class="state-title-badge">Ciudad de México</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Epi · Salud Pública · Inocuidad · Administración</div>
+        <div class="card-uni">UNAM — Ciencias de la Producción y Salud Animal</div>
+        <div class="card-program">El programa más reconocido del país. 10 campos de conocimiento: epidemiología, salud pública, inocuidad alimentaria, administración y economía, patología, microbiología, genética animal, nutrición, reproducción, producción animal.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-data-list">
+          <p><strong>Ratio de Aceptación:</strong> ~18% (Altamente competitivo)</p>
+          <p><strong>Outflow Destacado:</strong> Alumnos colocados en la OPS (Washington D.C.) y laboratorios de referencia.</p>
+          <p><strong>Requisitos:</strong> EXANI III ≥900 + EXCI 40%</p>
+        </div>
+        <div class="card-note">Si quieres gestión empresarial con rigor científico, el campo de Administración y Economía dentro de este programa es tu mejor opción.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.posgrado.unam.mx/programa/medicina-veterinaria-y-zootecnia-maestria/" target="_blank">Ver posgrado ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-micro">MICRO</span>
+      <div class="card-top">
+        <div class="card-area">Genómica · Inocuidad · AMR</div>
+        <div class="card-uni">UNAM FMVZ — Campo de Inocuidad, Calidad y Tecnología de los Alimentos</div>
+        <div class="card-program">Abarca genómica de patógenos transmitidos por alimentos, resistencia antimicrobiana en la cadena alimentaria, HACCP, buenas prácticas de manufactura y validación de medidas de control a escala industrial.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">El Depto. de Medicina Preventiva de la FMVZ-UNAM tiene doctores en salud pública (INSP) y maestras formadas en UC Davis, ideal para la interfaz veterinaria-salud humana.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://saludanimal.posgrado.unam.mx/" target="_blank">Ver sitio ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Acuicultura y Sanidad Clínica</div>
+        <div class="card-uni">UNAM FMVZ — Especialización en Producción Animal: Organismos Acuáticos</div>
+        <div class="card-program">Materias: Inmunología y Sanidad Acuícola, Cultivo de Crustáceos, Peces de Ornato, Alimentación de organismos acuáticos. Combina clínica veterinaria acuática con investigación productiva.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Especialización</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">El Grupo Profesional en Acuicultura de la FMVZ existe desde 1982 a petición de la Secretaría de Pesca. Si buscas salud acuática, es el único en el país.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.fmvz.unam.mx/fmvz/departamentos/abejas/acerca.html" target="_blank">Ver departamento ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-micro">MICRO</span>
+      <div class="card-top">
+        <div class="card-area">Apicultura Molecular y Genética</div>
+        <div class="card-uni">UNAM FMVZ — Área de Abejas</div>
+        <div class="card-program">Líneas de posgrado: genética y reproducción apícola, biology del comportamiento social, control del ácaro Varroa, biodiversidad de abejas nativas, polinización de cultivos.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Se ingresa mediante el posgrado general de Salud Animal, desarrollando el proyecto formal con asesores de este laboratorio. Cuenta con investigación de frontera y tutores del SNI.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.fmvz.unam.mx/fmvz/departamentos/abejas/personal.html" target="_blank">Ver investigadores ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">Nutrición · Rumiantes · Producción</div>
+        <div class="card-uni">UNAM — Campo de Producción y Economía Pecuaria</div>
+        <div class="card-program">Líneas activas: nutrición de rumiantes, mejoramiento genético, sincronización reproductiva, sistemas lecheros familiares, sustentabilidad pecuaria y gestión ambiental.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">La FES Cuautitlán suma una Especialización única en Ovinos y Caprinos, ideal para trabajo directo en campo pecuario e investigación estructural.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Medio</span>
+          <span>Rentabilidad Beca: Buena</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://saludanimal.posgrado.unam.mx/tutores/maestria_ciencias/produccion.html" target="_blank">Ver tutores ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-lab">LAB</span>
+      <div class="card-top">
+        <div class="card-area">Biociencias de Frontera · Riesgo</div>
+        <div class="card-uni">CINVESTAV-IPN — Maestrías en Ciencias</div>
+        <div class="card-program">Estudios avanzados de toxicología (CDMX), ecología humana (Mérida) y biología molecular aplicada. Referente de frontera científica.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Nuevo Laboratorio de Bioseguridad Nivel 3 (BSL-3). El promedio mínimo obligatorio es de 8.0 para competir. Entrevistas con 3 miembros del Colegio.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.cinvestav.mx/Academia/Convocatorias" target="_blank">Ver convocatorias ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-lab">LAB</span>
+      <div class="card-top">
+        <div class="card-area">Biotecnología Alimentaria</div>
+        <div class="card-uni">IPN — Maestría en Ciencias en Alimentos (ENCB)</div>
+        <div class="card-program">Líneas: biotecnología alimentaria, compuestos bioactivos, inocuidad y detección de adulterantes, procesamiento no convencional. Enfoque netamente químico-biológico.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Menor carga clínica, más laboratorio y ciencia básica aplicada. El IPN también cuenta con Maestría en Ciencias de la Salud (ESM) abierta a MVZ.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.sepi.encb.ipn.mx/oferta-educativa/maestria-alimentos/admision.html" target="_blank">Ver sitio ENCB ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="state-title-badge">Nuevo León</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Salud Animal · Epidemiología</div>
+        <div class="card-uni">UANL FMVZ — Maestría y Doctorado en Ciencia Animal</div>
+        <div class="card-program">Posgrado fuerte en salud animal, producción, reproducción, nutrición y epidemiología aplicada. Programa conjunto con la Facultad de Agronomía.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-data-list">
+          <p><strong>Clave SNP:</strong> 003067</p>
+          <p><strong>Filtros:</strong> EXIP UANL ≥900 + EXCI 40% de inglés</p>
+          <p><strong>Extra:</strong> Te incluye servicio médico ISSSTE durante tus estudios.</p>
+        </div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://veterinaria.uanl.mx/maestria-en-ciencia-animal/" target="_blank">Ver sitio UANL ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Conservación · Red Global One Health</div>
+        <div class="card-uni">UANL FCB — Conservación, Fauna Silvestre y Sustentabilidad</div>
+        <div class="card-program">Líneas de investigación: biodiversidad, ecología de poblaciones, genética de conservación, manejo sustentable. Cuenta con 15 investigadores en el SNI.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Su fuerte nexo y convenio formal con la Escuela de Salud Pública de Harvard es una puerta real a la investigación de zoonosis y salud pública.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="http://www.fcb.uanl.mx/pos/index.php/maestria-en-conservacion-fauna-silvestre-y-sustentabilidad" target="_blank">Ver posgrado FCB ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Gestión Ecológica · Acuacultura</div>
+        <div class="card-uni">UANL FCB — Manejo de Vida Silvestre y Desarrollo Sustentable</div>
+        <div class="card-program">Programa de 4 semestres, tiempo completo exclusivo. Materias: Manejo de Vida Silvestre (aves, mamíferos, reptiles), Ecosistemas Acuáticos, Socioeconomía, Leyes Ambientales.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Perfil de manejo e interdisciplinario. Incluye acuacultura sustentable y especies exóticas acuáticas mediante su Laboratorio de Manejo.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Alto</span>
+          <span>Rentabilidad Beca: Justa</span>
+        </div>
+        <br>
+        <a class="card-link" href="http://www.fcb.uanl.mx/nw/es/oferta/91-posgrado/724-maestria-en-ciencias-con-orientacion-en-manejo-de-vida-silvestre-y-desarrollo-sustentable" target="_blank">Ver programa ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Manejo de Fauna · Captura Química</div>
+        <div class="card-uni">UACJ — Maestría en Ciencia Animal</div>
+        <div class="card-program">Medicina preventiva combinada con herpetología, monitoreo de aves migratorias, control de daños por carnívoros, técnicas de contención química y escritura científica.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Colaboran activamente con la Universidad CES (Colombia) y UNESP (Brasil). Optativas poco comunes en el panorama de fauna nacional.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Medio</span>
+          <span>Rentabilidad Beca: Buena</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.uacj.mx/oferta/ICB_MCVS.html" target="_blank">Ver sitio UACJ ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="state-title-badge">Yucatán</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Vectores · Enfermedades Tropicales</div>
+        <div class="card-uni">UADY — Ciencias Veterinarias y Pecuarias</div>
+        <div class="card-program">Especialistas en dinámica de transmisión de vectores selváticos (Chagas, leishmaniasis, Aedes aegypti), resistencia antimicrobiana y salud One Health.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Ubicación inmejorable para recolectar datos biológicos en campo tropical y cuevas. Convocatoria particular PICAMRNT activa.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Medio</span>
+          <span>Rentabilidad Beca: Buena</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://ccba.uady.mx/mvz-oferta-educativa/mvz-posgrados" target="_blank">Ver posgrados UADY ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="state-title-badge">Estado de México & Hidalgo</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">Sanidad Agropecuaria · Regulación</div>
+        <div class="card-uni">Colegio de Postgraduados (Colpos) — Maestría en Ciencias en Salud Animal</div>
+        <div class="card-program">Institución pública con más de 60 años de trayectoria agropecuaria. Convenio formal con SADER en inocuidad, sanidad e inspección.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">La ruta idónea si te interesa vincularte al servicio público en organismos regulatorios pesados como el SENASICA o SADER.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Bajo</span>
+          <span>Rentabilidad Beca: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.colpos.mx/wb/index.php/oferta-educativa" target="_blank">Ver oferta Colpos ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Fauna Silvestre · Hábitats</div>
+        <div class="card-uni">Universidad Autónoma Chapingo — Manejo y Conservación de Fauna Silvestre</div>
+        <div class="card-program">Programa específico en zonas áridas, diversidad de recursos naturales y hábitats críticos. Puente entre la academia y el manejo gubernamental.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Énfasis en zonas áridas y fauna del norte de México. Red directa con dependencias clave como SEMARNAT y CONANP.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Bajo</span>
+          <span>Rentabilidad Beca: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://posgrado.chapingo.mx/programa/manejo-y-conservacion-de-fauna-silvestre/" target="_blank">Ver Chapingo ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-micro">MICRO</span>
+      <div class="card-top">
+        <div class="card-area">Diagnóstico Molecular · Bioactivos</div>
+        <div class="card-uni">UAEH — Maestría en Ciencias Zootécnicas y Salud Animal</div>
+        <div class="card-program">Estudio avanzado de patógenos pecuarios regionales, diagnóstico molecular, compuestos bioactivos y producción sustentable. Sede en ICAP Tulancingo.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Abierto a MVZ, agrónomos y biólogos. Única institución en Hidalgo con posgrados en ciencias naturales pecuarias. Registro en febrero y septiembre.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Bajo</span>
+          <span>Rentabilidad Beca: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.uaeh.edu.mx/campus/icap/maestria/ciencias-zootecnicas-salud-animal/" target="_blank">Ver ICAP ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Evolución · Parasitología Ambiental</div>
+        <div class="card-uni">UAEH — Maestría en Ciencias en Biodiversidad y Conservación</div>
+        <div class="card-program">Líneas en el Centro de Investigaciones Biológicas (CIB): sistemática, ecología de conservación, genética y helmintos bioindicadores de impacto ambiental.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Plan de estudios flexible donde el tema de tu tesis define el currículo académico. Helmintos bioindicadores conecta directo con One Health.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Bajo</span>
+          <span>Rentabilidad Beca: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.uaeh.edu.mx/campus/icbi/oferta/maestrias/icbibiodiversidad" target="_blank">Ver ICBI ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="state-title-badge">Chiapas, Sinaloa, Baja California Sur & Occidente</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Ecosistemas · Megadiversidad</div>
+        <div class="card-uni">ECOSUR — Ciencias en Recursos Naturales y Desarrollo Rural</div>
+        <div class="card-program">Orientaciones en conservación de la biodiversidad, ecología, zoonosis en vida silvestre y dinámicas One Health en la frontera sur megadiversa.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Sede estratégica para mesoamérica, fauna migratoria y selva tropical. La institución científica más importante del sureste.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Bajo</span>
+          <span>Rentabilidad Beca: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.ecosur.mx/posgrado/" target="_blank">Ver ECOSUR ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Sanidad Acuícola · Patología</div>
+        <div class="card-uni">CIAD Mazatlán — Acuicultura y Manejo Ambiental</div>
+        <div class="card-program">Líneas de frontera aplicadas: cultivo de peces y camarones, patología acuícola, ecología costera y bioeconomía marina.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Centro de investigación pública. Comparte planta docente con expertos internacionales y agrega administración pecuaria acuícola.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Medio</span>
+          <span>Rentabilidad Beca: Buena</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.ciad.mx/posgrados/opcionesterminales/acuicultura/" target="_blank">Ver CIAD Acuicultura ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Acuicultura · Recursos Marinos</div>
+        <div class="card-uni">CIBNOR La Paz — Maestría en Ciencias en Recursos Naturales</div>
+        <div class="card-program">Manejo sustentable, ecología pesquera y genética de poblaciones acuáticas en el noroeste mexicano. Tronco común con biología marina.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Todas las plazas son elegibles para beca de centro público. El doctorado en Bioeconomía conecta acuicultura con economía ambiental.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Medio</span>
+          <span>Rentabilidad Beca: Buena</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.cibnor.gob.mx/posgrados?id=888" target="_blank">Ver CIBNOR ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Meliponicultura · Polinización</div>
+        <div class="card-uni">UdeG CUSur — Maestría en Ciencias en Producción Apícola</div>
+        <div class="card-program">El único posgrado específico en apicultura integrado en el SNP. Biología, sanidad apícola, genética, reproducción e industrialización de miel.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Nicho crítico enfocado en abejas nativas sin aguijón (Melipona y Trigona) para conservación de polinizadores. Contacto: macpa@cusur.udg.mx.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Medio</span>
+          <span>Rentabilidad Beca: Buena</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.udg.mx/es/node/79801" target="_blank">Ver UdeG ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">Producción Pecuaria · Inocuidad</div>
+        <div class="card-uni">Universidad de Colima — Maestría en Producción Pecuaria</div>
+        <div class="card-program">Enfoque regional e innovación de procesos en rumiantes, aves y cerdos. Orientaciones en producción e inocuidad de productos alimentarios cárnicos.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Conexión directa con el sector ganadero del Pacífico mexicano. Sede en Tecomán. Correo de contacto: mippe@ucol.mx.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Bajo</span>
+          <span>Rentabilidad Beca: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.ucol.mx/estudia-udec/oferta-superior-maestria,82.htm" target="_blank">Ver Colima ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">Ganadería Tropical · Metano</div>
+        <div class="card-uni">UMAR Puerto Ángel — Maestría en Producción y Sanidad Animal</div>
+        <div class="card-program">Calidad de carne, nutrición de rumiantes pecuarios y ganadería costera oaxaqueña. Línea activa de investigación en reducción de metano entérico.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Nicho con alta relevancia climática actual. Profesores con trayectoria doctoral en centros Conahcyt y ecología tropical.</div>
+        <div class="meta-row">
+          <span>Costo de Vida Local: Bajo</span>
+          <span>Rentabilidad Beca: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.umar.mx/web/ensenanza/posgrados/maestria_en_produccion_y_sanidad_animal" target="_blank">Ver UMAR ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="state-title-badge">Administración, Gestión y Negocios Online</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Economía Pecuaria · Gestión</div>
+        <div class="card-uni">UNAM — Campo de Administración y Economía</div>
+        <div class="card-program">Dentro del posgrado científico de Salud Animal. Combina gestión corporativa con economía de la salud pecuaria y evaluación costo-beneficio de programas sanitarios.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca SECIHTI</span></div>
+      </div>
+      <div>
+        <div class="card-note">Involucra desarrollo formal de tesis, investigación y publicaciones, a diferencia de un MBA genérico tradicional de negocios.</div>
+        <div class="meta-row">
+          <span>Perfil: Consultor Corporativo</span>
+          <span>Esquema: Posgrado SNP</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://saludanimal.posgrado.unam.mx/" target="_blank">Ver UNAM ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">MBA · Transformación Digital</div>
+        <div class="card-uni">UNIR México — Maestría en Administración de Empresas (MBA)</div>
+        <div class="card-program">Oficial con modelo secuencial flexible y convenio con Harvard Business Publishing. Proyecto de Transformación Digital obligatorio. Acepta perfiles veterinarios.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">MBA · Online</span><span class="tag">Esquema Privado</span></div>
+      </div>
+      <div>
+        <div class="card-note">Para perfiles que buscan habilidades gerenciales sin dejar su práctica clínica actual. No cuenta con beca federal, requiere pago propio.</div>
+        <div class="meta-row">
+          <span>Modalidad: Online Flexible</span>
+          <span>Financiamiento: Propio</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://mexico.unir.net/economia/maestria-administracion-empresas-mba/" target="_blank">Ver MBA UNIR ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">Gestión Clínica · Dirección</div>
+        <div class="card-uni">Escuelas de Negocio Online — MBA Dirección de Clínicas Veterinarias</div>
+        <div class="card-program">Programas profesionalizantes de gestión contable, fiscal, software CRM, planificación de personal de hospital y marketing para clínicas (Esneca, Inenka, Educa).</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Especialización</span><span class="tag">Pago Propio</span></div>
+      </div>
+      <div>
+        <div class="card-note">No son posgrados de corte académico, son formaciones técnicas útiles para dueños de clínicas. Duración de 6 a 18 meses.</div>
+        <div class="meta-row">
+          <span>Apostilla: Disponible</span>
+          <span>Enfoque: Comercial Clínico</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://postgradoveterinaria.com/formacion/mba-gestion-de-clinicas-veterinarias/" target="_blank">Ver Opciones ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="country-title">Perú & Colombia</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Vigilancia Sanitaria · Epidemiología</div>
+        <div class="card-uni">UPCH — Epidemiología y Salud Pública en Veterinaria</div>
+        <div class="card-program">Diseño metodológico riguroso enfocado al control de zoonosis emergentes y vigilancia en salud pública. Ofrecen Diplomado de 24 créditos previo.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Esquema Privado</span></div>
+      </div>
+      <div>
+        <div class="card-note">Universidad Peruana Cayetano Heredia. De los planes con mayor reputación epidemiológica de la región andina.</div>
+        <div class="meta-row">
+          <span>Área: Región Andina</span>
+          <span>Descuento: Pronto Pago</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://posgrado.cayetano.edu.pe/programas/maestria-en-epidemiologia-y-salud-publica-en_veterinaria/" target="_blank">Ver UPCH ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Una Salud · Análisis Estadístico</div>
+        <div class="card-uni">UCSUR — Investigación Epidemiológica Veterinaria y One Health</div>
+        <div class="card-program">Propuestas metodológicas y sanitarias basadas en bioestadística clínica animal y el marco interdisciplinario Una Salud.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">One Health</span></div>
+      </div>
+      <div>
+        <div class="card-note">Universidad Científica del Sur. Planta docente con posgrados internacionales (MSc Zoonosis UAB Barcelona) integrados a la salud pública.</div>
+        <div class="meta-row">
+          <span>Enfoque: One Health</span>
+          <span>Esquema: Privado</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://maestria-investigacion-epidemiologica-animal.cientifica.edu.pe/" target="_blank">Ver UCSUR ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Epidemiología · Economía Veterinaria</div>
+        <div class="card-uni">UNMSM — Maestría en Epidemiología y Economía Veterinaria</div>
+        <div class="card-program">La más antigua y establecida del Perú. Vinculada a la red del Instituto IVITA, con estaciones experimentales en selva y sierra.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Universidad Pública</span></div>
+      </div>
+      <div>
+        <div class="card-note">Universidad Nacional Mayor de San Marcos (Decana de América). Cuenta con la infraestructura pecuaria y red de campo más grande del país.</div>
+        <div class="meta-row">
+          <span>Convocatoria: Abierta</span>
+          <span>Sede: Lima, Perú</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://posgrado.unmsm.edu.pe/programas/detalle/maestria-en-epidemiologia-y-economia-veterinaria" target="_blank">Ver UNMSM ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Medicina Preventiva · Sanidad</div>
+        <div class="card-uni">Universidad de Córdoba + Universidad de Caldas</div>
+        <div class="card-program">Maestrías enfocadas en ciencias veterinarias, control de poblaciones y medicina preventiva animal bajo costos de matrícula bastante accesibles.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría</span><span class="tag">Universidad Pública</span></div>
+      </div>
+      <div>
+        <div class="card-note">Colombia posee excelente infraestructura pecuaria. Programas con estrecha colaboración con México (UACJ) y Brasil (UNESP).</div>
+        <div class="meta-row">
+          <span>Modalidad: Presencial / Semi</span>
+          <span>Matrícula: Accesible</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.unicordoba.edu.co/facultades/ciencias-de-la-salud/posgrados/" target="_blank">Ver Córdoba ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="country-title">Chile</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Enfermedades Transmisibles · Modelado</div>
+        <div class="card-uni">Universidad de Chile — Ciencias Veterinarias y Pecuarias</div>
+        <div class="card-program">Magíster y doctorado con bases robustas en epidemiología y medicina preventiva pecuaria. Ofrece Diplomado previo en Epidemiología Aplicada.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Magíster · PhD</span><span class="tag">Beca ANID / UCh</span></div>
+      </div>
+      <div>
+        <div class="card-note">La institución veterinaria de mayor trayectoria en Chile. Cuenta con becas de doctorado propias internas de manutención ($900,000 CLP/mes).</div>
+        <div class="meta-row">
+          <span>Filtro ANID: Exigente</span>
+          <span>Movilidad: Activa</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://veterinaria.uchile.cl/postgrado" target="_blank">Ver posgrados UCh ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">One Health · Interfaz Ecosistémica</div>
+        <div class="card-uni">UDLA — Magíster en One Health</div>
+        <div class="card-program">Aborda el control de amenazas complejas en la interfaz humano-animal-ambiente. Acreditado formalmente ante la CNA, requisito para becas de manutención.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Magíster</span><span class="tag">Beca ANID</span></div>
+      </div>
+      <div>
+        <div class="card-note">Claustro docente consolidado con perfiles de doctorado formados en la UAB de Barcelona y en la Universidad de Chile.</div>
+        <div class="meta-row">
+          <span>Acreditación: CNA</span>
+          <span>Sede: Santiago, Chile</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://veterinaria-agronomia.udla.cl/magister-one-health/" target="_blank">Ver UDLA ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Inocuidad · Perspectiva Global</div>
+        <div class="card-uni">Universidad de Concepción — Doctorado en Ciencias Veterinarias</div>
+        <div class="card-program">Doctorado con curso estructural específico en "Seguridad e Inocuidad Alimentaria desde la Perspectiva One Health".</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Doctorado</span><span class="tag">Beca ANID</span></div>
+      </div>
+      <div>
+        <div class="card-note">Cooperación internacional activa con la Universidad de Murcia (España), permitiendo canales de cotutela doctoral compartida.</div>
+        <div class="meta-row">
+          <span>Canal: Cotutela España</span>
+          <span>Foco: Inocuidad Zoonosis</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://vet.udec.cl/sitio/" target="_blank">Ver UdeC ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="continent-title">Europa</div>
+
+  <div class="country-title">Alemania</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-micro">MICRO</span>
+      <div class="card-top">
+        <div class="card-area">Infecciología · Virología Molecular</div>
+        <div class="card-uni">LMU München — Tierärztliche Fakultät</div>
+        <div class="card-program">Investigación avanzada en patología animal, inmunología y virología molecular dentro de una de las facultades de élite alemanas. Foco estricto en zoonosis de laboratorio.</div>
+        <div class="card-tags"><span class="tag">Inglés · Alemán</span><span class="tag">MSc · PhD</span><span class="tag">Beca DAAD</span></div>
+      </div>
+      <div>
+        <div class="card-data-list">
+          <p><strong>Perfil técnico:</strong> Rigor en biología celular y bioquímica analítica.</p>
+          <p><strong>Ruta Financiera:</strong> Aplicación cruzada DAAD en el tercer trimestre del ciclo previo.</p>
+        </div>
+        <div class="meta-row">
+          <span>Costo de Vida: Alto</span>
+          <span>Idioma: Exigente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.vetmed.uni-muenchen.de" target="_blank">Ver LMU ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">Genética Pecuaria · Fisiología Sustentable</div>
+        <div class="card-uni">Universität Hohenheim — M.Sc. Animal Sciences</div>
+        <div class="card-program">Programa de vanguardia enfocado al modelado sustentable de la producción animal global, fitoterapia animal y genómica agropecuaria. Cursado completamente en inglés.</div>
+        <div class="card-tags"><span class="tag">Inglés</span><span class="tag">Master of Science</span><span class="tag">Beca DAAD</span></div>
+      </div>
+      <div>
+        <div class="card-data-list">
+          <p><strong>Estructura:</strong> Enfoque integral en sistemas productivos y bio-economía.</p>
+          <p><strong>Infraestructura:</strong> Campus de máxima especialización agrícola europea.</p>
+        </div>
+        <div class="meta-row">
+          <span>Costo de Vida: Medio</span>
+          <span>Ruta Financiera: DAAD ERP</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.uni-hohenheim.de/en/animal-sciences-master" target="_blank">Ver Hohenheim ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="country-title">España</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Zoonosis · Alianzas Globales</div>
+        <div class="card-uni">UAB — Máster Oficial en Zoonosis y Una Sola Salud (One Health)</div>
+        <div class="card-program">El posgrado más fuerte de Europa. Colabora de forma directa con la FAO, OMS, EFSA y el ECDC. Cuenta con biocontención de nivel 3 (BSL-3).</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Máster Oficial</span><span class="tag">Beca Carolina</span></div>
+      </div>
+      <div>
+        <div class="card-note">Universitat Autònoma de Barcelona. Egresadas han migrado a doctorados competitivos en USA u organismos mundiales. Valida Beca Carolina.</div>
+        <div class="meta-row">
+          <span>Competitividad: Extrema</span>
+          <span>Outflow: Agencias Globales</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.uab.cat/web/estudiar/la-oferta-de-masteres-oficiales/informacion-general-1096480309770.html?param1=1345694246010" target="_blank">Ver UAB ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Salul Ambiental · Climatología</div>
+        <div class="card-uni">Universidad de Zaragoza — Máster en Salud Global</div>
+        <div class="card-program">Currículum bilingüe centrado en la integración del impacto del cambio climático con las enfermedades vectoriales, salud ambiental y animal.</div>
+        <div class="card-tags"><span class="tag">Es · En</span><span class="tag">Máster Oficial</span><span class="tag">Beca Carolina</span></div>
+      </div>
+      <div>
+        <div class="card-note">Menos saturado competitivamente que Barcelona pero con un excelente nivel de investigación en salud de ecosistemas.</div>
+        <div class="meta-row">
+          <span>Perfil: Eco-Epidemiología</span>
+          <span>Estilo de Vida: Excelente</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://veterinaria.unizar.es/academico/master-salud-global" target="_blank">Ver UNIZAR ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-lab">LAB</span>
+      <div class="card-top">
+        <div class="card-area">Vigilancia Sanitaria · Diagnóstico</div>
+        <div class="card-uni">Universidad Complutense de Madrid — Facultad de Veterinaria</div>
+        <div class="card-program">Integra el prestigioso Centro de Vigilancia Sanitaria Veterinaria (VISAVET), uno de los hubs de referencia en control sanitario de Europa.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Máster · PhD</span><span class="tag">Beca Carolina</span></div>
+      </div>
+      <div>
+        <div class="card-note">Ofrece programas específicos de ayuda y becas para veterinarias latinoamericanas que buscan investigación de punta.</div>
+        <div class="meta-row">
+          <span>Infraestructura: VISAVET</span>
+          <span>Esquema: Erasmus+ / Carolina</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://veterinaria.ucm.es/becas-para-veterinarios-y-estuvet" target="_blank">Ver UCM ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Epidemiología Pura</div>
+        <div class="card-uni">Universidad de León — Maestría y Doctorado en Epidemiología Veterinaria</div>
+        <div class="card-program">Uno de los poquísimos centros europeos que ofrece la cadena continua de maestría y doctorado específicos en el área epidemiológica pecuaria.</div>
+        <div class="card-tags"><span class="tag">Español</span><span class="tag">Maestría · PhD</span><span class="tag">Beca Carolina</span></div>
+      </div>
+      <div>
+        <div class="card-note">Excelente reputación en investigación de sanidad poblacional y producción pecuaria. Compatible con la Fundación Carolina.</div>
+        <div class="meta-row">
+          <span>Especialidad: Continua Doctoral</span>
+          <span>Destino: León, España</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.unileon.es/investigacion/posgrado-y-doctorado" target="_blank">Ver León ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="country-title">Países Bajos & Reino Unido</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Modelado Estadístico · SPV</div>
+        <div class="card-uni">Utrecht University — MSc One Health / Epidemiology</div>
+        <div class="card-program">Top 5 internacional en veterinaria. Bioestadística, toxicología ambiental, salud pública veterinaria (SPV) y sanidad de animales de granja.</div>
+        <div class="card-tags"><span class="tag">Inglés</span><span class="tag">Master of Science</span><span class="tag">DAAD / SECIHTI Ext</span></div>
+      </div>
+      <div>
+        <div class="card-note">Acreditado por la AVMA estadounidense, EAEVE europea y AVBC australiana. Exige inglés impecable y bases analíticas sólidas.</div>
+        <div class="meta-row">
+          <span>Filtro Técnico: R / SAS Básico</span>
+          <span>Acreditación: Triple Corona</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.uu.nl/en/masters/one-health" target="_blank">Ver Utrecht ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Enfermedades Infecciosas</div>
+        <div class="card-uni">University of Edinburgh — Royal (Dick) School of Veterinary Studies</div>
+        <div class="card-program">Top 5 mundial. Posgrados de alta excelencia acreditados internacionalmente. Líneas fuertes en epidemiología de patógenos y modelado infeccioso.</div>
+        <div class="card-tags"><span class="tag">Inglés</span><span class="tag">MSc · PhD</span><span class="tag">Erasmus Mundus / DAAD</span></div>
+      </div>
+      <div>
+        <div class="card-note">Requiere un nivel de inglés competitivo (IELTS 6.5+). Es altamente recomendable contar con experiencia de investigación o publicaciones previas.</div>
+        <div class="meta-row">
+          <span>Sede: Escocia, UK</span>
+          <span>Filtro: Perfil Investigador</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.ed.ac.uk/vet/postgraduate" target="_blank">Ver Edinburgh ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="country-title">Francia & Italia</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Gobernanza Sanitaria · SPV</div>
+        <div class="card-uni">VetAgro Sup + U. Claude Bernard Lyon 1 — Master International One Health</div>
+        <div class="card-program">Sede en Lyon (cuna de la veterinaria mundial). Enfoque didáctico basado en simulación de crisis sanitarias, epidemiología, socioeconomía y ecología.</div>
+        <div class="card-tags"><span class="tag">En · Fr</span><span class="tag">Master 2</span><span class="tag">Beca Eiffel / DAAD</span></div>
+      </div>
+      <div>
+        <div class="card-note">Acreditado por la AVMA. El bloque M2 exige un año previo equivalente en medicina, veterinaria o ciencias biológicas.</div>
+        <div class="meta-row">
+          <span>Estructura: Casos de Rol</span>
+          <span>Acreditación: AVMA / EAEVE</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://chaire-vph.vetagro-sup.fr/formations/master-oh-mhp/" target="_blank">Ver VetAgro Sup ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-eco">ECO</span>
+      <div class="card-top">
+        <div class="card-area">Epidemiología Ecológica</div>
+        <div class="card-uni">Institut Agro Montpellier — MSc Tropical & Mediterranean Agriculture</div>
+        <div class="card-program">Cluster científico masivo en agricultura tropical, salud de poblaciones y vectores. Sede de centros mundiales como CIRAD, IRD e INRAE.</div>
+        <div class="card-tags"><span class="tag">En · Fr</span><span class="tag">MSc · PhD</span><span class="tag">Beca Eiffel / Erasmus</span></div>
+      </div>
+      <div>
+        <div class="card-note">Cuenta con un 22% de alumnos internacionales y convenios en más de 100 países. Idóneo para dinámicas ecológicas de trópicos.</div>
+        <div class="meta-row">
+          <span>Cluster: CIRAD / IRD</span>
+          <span>Beca: Eiffel Excelencia</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://en.institut-agro-montpellier.fr/programs/degree-programs/masters" target="_blank">Ver Montpellier ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-data">DATA</span>
+      <div class="card-top">
+        <div class="card-area">Circular Health · Zoonosis</div>
+        <div class="card-uni">Universidad de Bolonia — Veterinary Medicine + PhD Veterinary Sciences</div>
+        <div class="card-program">La universidad más antigua del mundo. Licenciatura en inglés con enfoque One Health y doctorado enfocado en patógenos transmisibles y salud pública.</div>
+        <div class="card-tags"><span class="tag">Inglés</span><span class="tag">PhD / Laurea</span><span class="tag">Beca ER-GO / UniBo</span></div>
+      </div>
+      <div>
+        <div class="card-note">Ofrece 30 becas anuales para internacionales (€6,500 + exención). Tasa de admisión alta (~73%) frente a otros programas europeos.</div>
+        <div class="meta-row">
+          <span>Ranking: #1 Italia</span>
+          <span>Filtro: Examen + Carta</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://corsi.unibo.it/singlecycle/VeterinaryMedicine" target="_blank">Ver Bolonia ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="country-title">Emiratos Árabes Unidos</div>
+  <div class="cards">
+    <div class="card">
+      <span class="card-vibe-tag vibe-agro">AGRO</span>
+      <div class="card-top">
+        <div class="card-area">Ciencias Animales · Alimentos</div>
+        <div class="card-uni">UAEU — College of Agriculture & Veterinary Medicine</div>
+        <div class="card-program">El único college en EAU que unifica veterinaria, nutrición y seguridad alimentaria. Cuenta con más de 30 laboratorios especializados de alta gama.</div>
+        <div class="card-tags"><span class="tag">Inglés</span><span class="tag">MSc · Investigación</span><span class="tag">Beca UAEU Full</span></div>
+      </div>
+      <div>
+        <div class="card-note">La beca incluye exención total de matrícula, salario mensual y apoyos adicionales del proyecto (hasta 3000 AED/mes). Exige apoyo en campus.</div>
+        <div class="meta-row">
+          <span>Foco: Food Security</span>
+          <span>Sede: Al Ain, EAU</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://uaeu.ac.ae/en/cavm/" target="_blank">Ver UAEU ↗</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="card-vibe-tag vibe-lab">LAB</span>
+      <div class="card-top">
+        <div class="card-area">Salud Ambiental · STEM</div>
+        <div class="card-uni">Universidad de Khalifa — Programas de Investigación STEM</div>
+        <div class="card-program">Universidad de máxima investigación tecnológica. No cuenta con facultad veterinaria pura, pero tiene líneas de salud ambiental críticas para perfiles de una salud.</div>
+        <div class="card-tags"><span class="tag">Inglés</span><span class="tag">MSc · PhD</span><span class="tag">Beca AMEXCID / KU</span></div>
+      </div>
+      <div>
+        <div class="card-note">Convenios y becas disponibles para mexicanas vía AMEXCID. El portal bilateral actualiza las cuotas de financiamiento de manera periódica.</div>
+        <div class="meta-row">
+          <span>Convenio: AMEXCID</span>
+          <span>Sede: Abu Dhabi, EAU</span>
+        </div>
+        <br>
+        <a class="card-link" href="https://www.ku.ac.ae/academics/graduate-programs" target="_blank">Ver Khalifa ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="mentor-quote">
+    <div class="mentor-meta">Nota de Bitácora / Experiencia Real de Colega</div>
+    <div class="mentor-text">
+      "A mí me tomó un año completo de preparación estricta, traduciendo papeles, contactando asesores y blindando mi perfil, lograr la aceptación en el <strong>MSc en Epidemiología de la University of Basel</strong>. Lleva tiempo y requiere de una paciencia enorme. 
+      <br><br>
+      Ten esto muy claro: <strong>nada se construye de un día para otro</strong>. La transición fuera de las clínicas veterinarias tradicionales hacia la ciencia de frontera exige constancia absoluta en la ejecución diaria. No te detengas."
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-badge">02</span>
+    <div class="section-title">Mapa de Becas de Financiamiento</div>
+  </div>
+
+  <div class="becas">
+    <div class="beca">
+      <div class="beca-header">
+        <div>
+          <div class="beca-name">DAAD (Servicio Alemán de Intercambio Académico)</div>
+          <div class="beca-org">República Federal de Alemania · daad.de</div>
+        </div>
+        <a class="beca-link" href="https://www.daad.de" target="_blank">Portal DAAD ↗</a>
+      </div>
+      <div class="beca-row">
+        <div class="beca-detail">Estipendio Mensual Completo</div>
+        <div class="beca-detail">Seguro de Médica Colectiva Alemana</div>
+        <div class="beca-detail">Curso de Idioma Financiado</div>
+      </div>
+      <p class="beca-note">Mecanismo: Apoya a más de 100,000 estudiantes al año. Cuenta con programas específicos para países en desarrollo en áreas de ciencias biológicas y veterinaria. Países Bajos (Utrecht) también llega a aceptar candidatas con respaldo del DAAD. La oficina regional de Colombia coordina las cuotas de la zona.</p>
+      <span class="beca-highlight">✦ Excelente para ir a Alemania o recibir apoyos logísticos institucionales de investigación en Europa.</span>
+    </div>
+
+    <div class="beca">
+      <div class="beca-header">
+        <div>
+          <div class="beca-name">SECIHTI (Antes CONACYT)</div>
+          <div class="beca-org">Gobierno de México · secihti.mx</div>
+        </div>
+        <a class="beca-link" href="https://secihti.mx" target="_blank">Portal SECIHTI ↗</a>
+      </div>
+      <div class="beca-row">
+        <div class="beca-detail">Maestría Nacional: ~$16,048 MXN/mes</div>
+        <div class="beca-detail">Doctorado Nacional: ~$21,397 MXN/mes</div>
+        <div class="beca-detail">Extranjero Maestría: ~$1,800–2,500 USD/mes</div>
+        <div class="beca-detail">Extranjero PhD: ~$2,200–3,200 USD/mes</div>
+      </div>
+      <p class="beca-note">Qué necesitas: Promedio de egreso mínimo de 8.0, e.firma activa del SAT, dedicación exclusiva y aceptación formal en un posgrado del SNP. Para el extranjero solicita TOEFL ITP ≥550 o IELTS 6.5. No es retroactiva. Convocatoria abierta hasta nov 2026.</p>
+      <span class="beca-highlight">✦ El fondo público principal para sustentar tu carrera científica dentro y fuera de México.</span>
+    </div>
+
+    <div class="beca">
+      <div class="beca-header">
+        <div>
+          <div class="beca-name">Fundación Carolina</div>
+          <div class="beca-org">Reino de España · fundacioncarolina.es</div>
+        </div>
+        <a class="beca-link" href="https://www.fundacioncarolina.es" target="_blank">Fundación Carolina ↗</a>
+      </div>
+      <div class="beca-row">
+        <div class="beca-detail">Matrícula Pagada</div>
+        <div class="beca-detail">Estipendio Mensual</div>
+        <div class="beca-detail">Vuelo Trasatlántico Incluido</div>
+      </div>
+      <p class="beca-note">Foco en perfiles de Latinoamérica, priorizando la inclusión de mujeres en disciplinas STEM. Cuotas: 228 posgrado, 120 doctorado. Permite aplicar hasta a 5 programas en orden de prioridad. Exige el retorno obligatorio a LATAM al graduarte. Compatible con la UAB, UNIZAR, UCM y León. Abre cada enero.</p>
+    </div>
+
+    <div class="beca">
+      <div class="beca-header">
+        <div>
+          <div class="beca-name">Erasmus Mundus</div>
+          <div class="beca-org">Unión Europea</div>
+        </div>
+        <a class="beca-link" href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en" target="_blank">Catálogo Erasmus ↗</a>
+      </div>
+      <div class="beca-row">
+        <div class="beca-detail">Itinerante: 2–4 Países</div>
+        <div class="beca-detail">Duración: 12–24 Meses</div>
+        <div class="beca-detail">Financiamiento Completo UE</div>
+      </div>
+      <p class="beca-note">Programa de maestría multinacional europeo. Cambias de país sede cada semestre. Las áreas elegibles cubren de forma explícita estudios veterinarios, salud humana y agroalimentaria. Aplicación directa e independiente en su portal.</p>
+    </div>
+
+    <div class="beca">
+      <div class="beca-header">
+        <div>
+          <div class="beca-name">OEA + SECIHTI</div>
+          <div class="beca-org">OEA + Gobierno de México</div>
+        </div>
+        <a class="beca-link" href="https://www.oas.org/es/becas/conacyt.asp" target="_blank">Portal OEA ↗</a>
+      </div>
+      <div class="beca-row">
+        <div class="beca-detail">Para: Ciudadanas de Países OEA</div>
+        <div class="beca-detail">Cubre: Inscripción + Apoyo Instalación</div>
+      </div>
+      <p class="beca-note">Esquema bilateral diseñado para que latinoamericanas de otros países de la organización realicen sus estudios científicos de posgrado en México. Útil si posees redes de colegas en Perú, Colombia o Chile que deseen migrar a posgrados del SNP mexicano.</p>
+    </div>
+
+    <div class="beca">
+      <div class="beca-header">
+        <div>
+          <div class="beca-name">Becas Chile — ANID</div>
+          <div class="beca-org">Agencia Nacional de Investigación y Desarrollo · anid.cl</div>
+        </div>
+        <a class="beca-link" href="https://anid.cl/capital-humano-2/" target="_blank">Portal ANID ↗</a>
+      </div>
+      <div class="beca-row">
+        <div class="beca-detail">Extranjero: 100% Matrícula + Manutención</div>
+        <div class="beca-detail">Nacional: Doctorado / Magíster Acreditado</div>
+        <div class="beca-detail">Convenio: ANID-DAAD Alemania</div>
+      </div>
+      <p class="beca-note">Si eres chilena: Filtro inicial de promedio ≥5.0/7.0 o top 30% del ranking de egreso. Ponderación estricta de antecedentes (30%), ranking de la universidad destino (30%) y calidad de tus ensayos personales (40%). Exige el retorno obligatorio por 2 años al finalizar.</p>
+    </div>
+
+    <div class="beca">
+      <div class="beca-header">
+        <div>
+          <div class="beca-name">AMEXCID</div>
+          <div class="beca-org">Agencia Mexicana de Cooperación Internacional · gob.mx/amexcid</div>
+        </div>
+        <a class="beca-link" href="https://www.gob.mx/amexcid/acciones-y-programas/oferta-para-mexicanos" target="_blank">Oferta AMEXCID ↗</a>
+      </div>
+      <div class="beca-row">
+        <div class="beca-detail">Tipo: Agregador y Difusor Bilateral</div>
+        <div class="beca-detail">Alcance: Más de 30 Países Socios</div>
+      </div>
+      <p class="beca-note">La agencia no otorga fondos directos propios; funciona como un concentrador oficial de convocatorias ofrecidas por gobiernos extranjeros (Japón, Corea, Emiratos, Francia, etc.) exclusivas para mexicanas. Se aconseja auditar su directorio cada 3 meses.</p>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <span class="section-badge">03</span>
+    <div class="section-title">Mapa Comparativo de Admisión</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Programa / Convocatoria</th>
+          <th>País</th>
+          <th>Idioma</th>
+          <th>Beca Compatible</th>
+          <th>Filtro / Promedio Mínimo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>UNAM Ciencias Producción y Salud Animal</strong></td>
+          <td>México</td>
+          <td>Español</td>
+          <td style="color: var(--pop-plum); font-weight:700;">SECIHTI Nacional</td>
+          <td>8.0 / EXANI III ≥900</td>
+        </tr>
+        <tr>
+          <td><strong>UANL Ciencia Animal (conjunto)</strong></td>
+          <td>México</td>
+          <td>Español</td>
+          <td style="color: var(--pop-plum); font-weight:700;">SECIHTI Nacional</td>
+          <td>8.0 / EXIP UANL ≥900</td>
+        </tr>
+        <tr>
+          <td><strong>UPCH Epidemiología Veterinaria</strong></td>
+          <td>Perú</td>
+          <td>Español</td>
+          <td>Beca Interna UPCH</td>
+          <td>Promedio aprobatorio legal</td>
+        </tr>
+        <tr>
+          <td><strong>UCSUR Investigación Epi y One Health</strong></td>
+          <td>Perú</td>
+          <td>Español</td>
+          <td>Convenio / Privado</td>
+          <td>Promedio aprobatorio legal</td>
+        </tr>
+        <tr>
+          <td><strong>UAB Zoonosis y Una Sola Salud</strong></td>
+          <td>España</td>
+          <td>Español</td>
+          <td style="color: var(--pop-plum); font-weight:700;">Fundación Carolina / SECIHTI Ext.</td>
+          <td>7.0+ (Carolina) / 8.0 (SECIHTI)</td>
+        </tr>
+        <tr>
+          <td><strong>UNIZAR Máster Salud Global</strong></td>
+          <td>España</td>
+          <td>Es / En</td>
+          <td style="color: var(--pop-plum); font-weight:700;">Fundación Carolina / SECIHTI Ext.</td>
+          <td>7.0+ (Fundación Carolina)</td>
+        </tr>
+        <tr>
+          <td><strong>UCM Vigilancia Sanitaria (VISAVET)</strong></td>
+          <td>España</td>
+          <td>Español</td>
+          <td style="color: var(--pop-plum); font-weight:700;">Fundación Carolina / SECIHTI Ext.</td>
+          <td>7.0+ (Fundación Carolina)</td>
+        </tr>
+        <tr>
+          <td><strong>U. León Epidemiología Veterinaria</strong></td>
+          <td>España</td>
+          <td>Español</td>
+          <td style="color: var(--pop-plum); font-weight:700;">Fundación Carolina / SECIHTI Ext.</td>
+          <td>7.0+ (Fundación Carolina)</td>
+        </tr>
+        <tr>
+          <td><strong>Utrecht One Health / Epidemiology</strong></td>
+          <td>Países Bajos</td>
+          <td>Inglés</td>
+          <td>DAAD / SECIHTI Ext.</td>
+          <td>8.0 equivalente / IELTS 6.5</td>
+        </tr>
+        <tr>
+          <td><strong>U. Edinburgh Vet Studies</strong></td>
+          <td>Escocia</td>
+          <td>Inglés</td>
+          <td>Erasmus Mundus / DAAD</td>
+          <td>8.0+ / IELTS 6.5+ obligatorio</td>
+        </tr>
+        <tr>
+          <td><strong>UDLA Magíster One Health</strong></td>
+          <td>Chile</td>
+          <td>Español</td>
+          <td style="color: var(--pop-plum); font-weight:700;">ANID Magíster Nacional</td>
+          <td>5.0/7.0 o pertenecer al Top 30%</td>
+        </tr>
+        <tr>
+          <td><strong>U. de Chile Posgrados Cs. Veterinarias</strong></td>
+          <td>Chile</td>
+          <td>Español</td>
+          <td style="color: var(--pop-plum); font-weight:700;">ANID Nacional / Interna UCh</td>
+          <td>5.0/7.0 o pertenecer al Top 30%</td>
+        </tr>
+        <tr>
+          <td><strong>VetAgro Sup Master One Health</strong></td>
+          <td>Francia</td>
+          <td>En / Fr</td>
+          <td>Beca Eiffel / DAAD</td>
+          <td>M1 previo completo / IELTS 6.0+</td>
+        </tr>
+        <tr>
+          <td><strong>Institut Agro Montpellier Tropical Agriculture</strong></td>
+          <td>Francia</td>
+          <td>En / Fr</td>
+          <td>Beca Eiffel / Erasmus Mundus</td>
+          <td>Licenciatura + Carta Campus France</td>
+        </tr>
+        <tr>
+          <td><strong>U. Bologna Veterinary Medicine + PhD</strong></td>
+          <td>Italia</td>
+          <td>Inglés</td>
+          <td>Beca UniBo / ER-GO</td>
+          <td>Examen de admisión / Sin mínimo fijo</td>
+        </tr>
+        <tr>
+          <td><strong>UAEU College Agriculture & Vet</strong></td>
+          <td>EAU</td>
+          <td>Inglés</td>
+          <td>Beca UAEU (Exención + Salario)</td>
+          <td>Excelencia previa / Sin mínimo fijo</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-header">
+    <span class="section-badge">04</span>
+    <div class="section-title">Papeles y Requisitos Reales</div>
+  </div>
+
+  <div class="req-grid">
+    <div class="req-card">
+      <div class="req-title">Para Beca Nacional (SECIHTI)</div>
+      <ul class="req-list">
+        <li>Promedio mínimo de 8.0 en la licenciatura (certificado oficial).</li>
+        <li>Carta de aceptación formal firmada por un posgrado del SNP.</li>
+        <li>Dar de alta o actualizar tu CVU en la plataforma federal.</li>
+        <li>Tener tu e.firma del SAT vigente y libre de errores operativos.</li>
+        <li>Estatus de tiempo completo exclusivo (sin empleo remunerado activo).</li>
+        <li>No poseer un grado académico equivalente al que estás postulando.</li>
+        <li>Estar libre de cualquier otro apoyo o beca federal activa.</li>
+      </ul>
+    </div>
+
+    <div class="req-card">
+      <div class="req-title">Para Beca al Extranjero (SECIHTI)</div>
+      <ul class="req-list">
+        <li>Carta de aceptación incondicional de una universidad extranjera.</li>
+        <li>Promedio mínimo obligatorio de 8.0 en tu historial de licenciatura.</li>
+        <li>Certificación oficial de inglés vigente (TOEFL ITP ≥550 o IELTS 6.5).</li>
+        <li>Carga completa de CVU junto con 3 cartas de recomendación científicas.</li>
+        <li>Nacionalidad mexicana o estatus de residencia legal comprobable.</li>
+        <li>Dedicación exclusiva completa al desarrollo del posgrado.</li>
+      </ul>
+    </div>
+
+    <div class="req-card">
+      <div class="req-title">Para Fundación Carolina (España)</div>
+      <ul class="req-list">
+        <li>Poseer la ciudadanía de algún país latinoamericano.</li>
+        <li>Grado universitario oficial terminado (licenciatura o equivalente).</li>
+        <li>Promedio mínimo competitivo (suele variar según el programa base).</li>
+        <li>Postular a un máximo de 5 programas ordenados estrictamente por prioridad.</li>
+        <li>Expedición de carta detallada de motivos y expediente académico.</li>
+        <li>Aceptación o invitación formal de la universidad destino española.</li>
+      </ul>
+    </div>
+
+    <div class="req-card">
+      <div class="req-title">Para PhD en Europa (Como Posición Laboral)</div>
+      <ul class="req-list">
+        <li>Búsqueda directa y negociación previa con los directores de tesis.</li>
+        <li>Grado de maestría terminado o experiencia científica equivalente.</li>
+        <li>Certificación de inglés fluida (IELTS 6.5+ como estándar general).</li>
+        <li>Propuesta formal de investigación alineada a las líneas del laboratorio.</li>
+        <li>Historial de publicaciones indexadas o estancias previas comprobables.</li>
+        <li>CV académico detallado bajo estándares internacionales.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notice" style="border-left: 4px solid var(--pop-pink); background: var(--bg-white); margin-top: 0;">
+    <div class="notice-icon" style="background: var(--brand-lav); color: var(--pop-plum);">⬙</div>
+    <div>
+      <span class="block-label" style="color: var(--pop-plum);">Dato estructural sobre el PhD europeo & suizo</span>
+      <p style="font-size: 13px; line-height: 1.6;">En la gran mayoría de universidades europeas (incluyendo Basilea, Utrecht, Edimburgo o los centros alemanes), el doctorado no es un "programa" escolar tradicional donde pagas matrícula. Es una <strong>posición laboral remunerada que se publica como vacante abierta</strong>. Buscas al supervisor, defiendes tu perfil, y el investigador te contrata con cargo a sus fondos de proyecto. El salario del contrato constituye tu estipendio mensual. Esto aplica exactamente al ecosistema científico suizo.</p>
+    </div>
+  </div>
+
+
+  <div class="section-header">
+    <span class="section-badge">05</span>
+    <div class="section-title">Cronograma de Fricción Cruzada (Flujos Paralelos)</div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 20%;">Fase Temporal</th>
+          <th style="width: 35%;">Track Administrativo (Digital)</th>
+          <th style="width: 35%;">Track Académico (Científico)</th>
+          <th style="width: 10%;">Alerta Cero</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mes -6 al -4</strong></td>
+          <td>Tramitar o renovar la e.firma en las oficinas del SAT. (Las citas presenciales pueden tardar meses). Auditar que tu promedio de egreso sea ≥ 8.0 para fondos nacionales.</td>
+          <td>Definir meta geográfica (México vs Extranjero). Contactar investigadores vía correo formal enviando propuestas breves de una página alineadas a su laboratorio.</td>
+          <td style="color: var(--pop-plum); font-weight: 700;">Trámites del SAT.</td>
+        </tr>
+        <tr>
+          <td><strong>Mes -3 al -2</strong></td>
+          <td>Dar de alta el CVU en la plataforma miic.conacyt.mx y cargar tus documentos oficiales (título y notas) legalizados o apostillados.</td>
+          <td>Presentar las certificaciones oficiales de idioma (TOEFL o IELTS). Los resultados institucionales toman hasta 15 días hábiles. Consensuar las 3 cartas de recomendación estrictamente con perfiles investigadores.</td>
+          <td style="color: var(--pop-plum); font-weight: 700;">Cierre de Idioma.</td>
+        </tr>
+        <tr>
+          <td><strong>Mes -1 (Cierre)</strong></td>
+          <td>Cargar la Carta de Aceptación Incondicional del posgrado y formalizar la solicitud de fondos en la ventanilla correspondiente.</td>
+          <td>Redactar la Carta de Motivos con un enfoque analítico, planteando el problema epidemiológico que te interesa resolver. Sostener entrevistas de defensa ante el comité académico.</td>
+          <td style="color: var(--pop-plum); font-weight: 700;">Cartas faltantes.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="summary-box">
+    <div class="site-label" style="color: var(--brand-blue);">Plataformas de Enlace Rápido</div>
+    <div class="summary-grid">
+      <div class="summary-links">
+        <a href="https://secihti.mx" target="_blank">→ secihti.mx (Fondos y SNP México)</a>
+        <a href="https://www.fundacioncarolina.es" target="_blank">→ fundacioncarolina.es (Estudios en España)</a>
+        <a href="https://www.daad.de" target="_blank">→ daad.de (Intercambio Científico DAAD)</a>
+        <a href="https://www.gob.mx/amexcid" target="_blank">→ gob.mx/amexcid (Bolsa de Becas Bilaterales)</a>
+        <a href="https://www.oas.org/es/becas/conacyt.asp" target="_blank">→ oas.org/becas-conacyt (Posgrados OEA)</a>
+        <a href="https://extranet.unifrance.org" target="_blank">→ campusfrance.org (Excelencia Eiffel Francia)</a>
+      </div>
+      <div>
+        <p style="font-size: 11px; opacity: 0.85; line-height: 1.6; color: var(--bg-cream);">
+          <strong>Ciclos Críticos de Alerta:</strong><br>
+          ▪ Enero: Apertura formal de la ventanilla Fundación Carolina.<br>
+          ▪ Enero a Marzo: Carga de expedientes para España.<br>
+          ▪ Mayo a Junio: Monitoreo de convocatorias SECIHTI Extranjero.<br>
+          ▪ Febrero y Agosto: Ventanas de ingreso para el posgrado nacional SNP.<br>
+          ▪ Todo el año: Negociaciones directas para vacantes de PhD contratado en Europa.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <footer>Investigación de campo • Coordinación de Posgrados y Becas LATAM • Jun 2026 • stephzavla</footer>
+
+</div>
+
+</body>
+</html>
